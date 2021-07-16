@@ -23,12 +23,12 @@ class _ComState extends State<Com> {
   Widget build(BuildContext context) {
     rating = ModalRoute.of(context)!.settings.arguments as Map;
     print(rating['rating']);
-    if(rating['rating']<10)
+    if(rating['rating']<=10)
       {
         out=0;
         text_color=Colors.red;
       }
-    else if(rating['rating']<20){
+    else if(rating['rating']<=20){
       out=1;
       text_color=Colors.yellow;
     }
