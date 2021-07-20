@@ -53,12 +53,13 @@ class _HomeState extends State<Home> {
                   ),
                   ElevatedButton(
                       onPressed: () {
-                        if(index<=4)
+                        if(index<=(questions.length-2))
                         {
                           setState(() {
                             finalrating += rating[index];
                             index +=1;
                           });
+                          but = 'Next';
                         }
                         else
                           {
@@ -66,13 +67,6 @@ class _HomeState extends State<Home> {
                             Navigator.pushReplacementNamed(context, '/comment', arguments: {
                               'rating' : finalrating
                             });
-                          }
-                        if(index<=4)
-                          {
-                            but = 'Next';
-                          }
-                        else
-                          {
                             but = 'Submit';
                           }
                       },
